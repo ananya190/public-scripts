@@ -1,0 +1,29 @@
+\usepackage{listings}
+\usepackage{courier}
+\usepackage[]{xcolor}
+
+\definecolor{commtaupe}{HTML}{BBC0B6}
+\definecolor{kwaqua}{HTML}{74BDCB}
+\definecolor{idsalmon}{HTML}{FFA384}
+\definecolor{bgcream}{HTML}{F0EDE4}
+\definecolor{genchar}{HTML}{435861}
+
+\lstset{
+  basicstyle=\fontfamily{pcr}\footnotesize,
+  numbers=left,
+  numberstyle=\fontfamily{pcr}\tiny\color{gray},
+  stepnumber=1,
+  numbersep=5pt,
+  backgroundcolor=\color{bgcream},
+  identifierstyle=\color{idsalmon}\bfseries,
+  keywordstyle=\color{kwaqua},
+  commentstyle=\color{commtaupe}\itshape,
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  rulecolor=\color{black},
+  captionpos=b,
+  breaklines=true,
+  breakatwhitespace=true,
+  title=\lstname
+}
