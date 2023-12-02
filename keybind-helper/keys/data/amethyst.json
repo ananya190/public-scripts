@@ -1,0 +1,100 @@
+{
+  "name_of_program": "amethyst",
+  "commands": [
+    {
+      "command": "cycle layout forward",
+      "shortcut": "opt-shift-space",
+      "description": ""
+    },
+    {
+      "command": "cycle layout backwards",
+      "shortcut": "opt-shift-ctrl-space",
+      "description": ""
+    },
+    {
+      "command": "shrink main pane",
+      "shortcut": "opt-shift-H",
+      "description": ""
+    },
+    {
+      "command": "expand main pane",
+      "shortcut": "opt-shift-L",
+      "description": ""
+    },
+    {
+      "command": "increase main pane count",
+      "shortcut": "opt-shift-,",
+      "description": ""
+    },
+    {
+      "command": "decrease main pane count",
+      "shortcut": "opt-shift-.",
+      "description": ""
+    },
+    {
+      "command": "move focus counter clockwise",
+      "shortcut": "opt-shift-J",
+      "description": ""
+    },
+    {
+      "command": "move focus clockwise",
+      "shortcut": "opt-shift-K",
+      "description": ""
+    },
+    {
+      "command": "move focus to main window",
+      "shortcut": "opt-shift-M",
+      "description": ""
+    },
+    {
+      "command": "swap focused window counter clockwise",
+      "shortcut": "opt-shift-ctrl-J",
+      "description": ""
+    },
+    {
+      "command": "swap focused window clockwise",
+      "shortcut": "opt-shift-ctrl-K",
+      "description": ""
+    },
+    {
+      "command": "swap focused window with main window",
+      "shortcut": "opt-shift-enter",
+      "description": ""
+    },
+    {
+      "command": "force windows to be reevaluated",
+      "shortcut": "opt-shift-Z",
+      "description": ""
+    },
+    {
+      "command": "select Tall layout",
+      "shortcut": "opt-shift-A",
+      "description": ""
+    },
+    {
+      "command": "select Wide layout",
+      "shortcut": "opt-shift-O",
+      "description": ""
+    },
+    {
+      "command": "select Fullscreen layout",
+      "shortcut": "opt-shift-E",
+      "description": ""
+    },
+    {
+      "command": "select Column layout",
+      "shortcut": "opt-shift-U",
+      "description": ""
+    },
+    {
+      "command": "select Binary Space Partitioning layout",
+      "shortcut": "opt-shift-B",
+      "description": ""
+    },
+    {
+      "command": "relaunch amethyst",
+      "shortcut": "opt-shift-ctrl-Z",
+      "description": ""
+    }
+  ]
+}

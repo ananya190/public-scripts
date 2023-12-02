@@ -1,0 +1,62 @@
+#!/Users/ananyageorge/opt/anaconda3/bin/python3.9
+
+import os
+import sys
+import json
+
+
+
+group_info = {}
+
+with open("/Users/ananyageorge/.scripts/vit-stuff/file-setup/tarp-group-info.json", "r") as infojson:
+    group_info = json.load(infojson)
+
+# the purpose of this script is to duplicate the ananya.tex file for each member of the group
+# and set the name and id in each file
+
+# workflow:
+# 1. get assignment name
+# 2. cd into the assignment folder
+# 3. ensure ananya.tex exists
+# 4. for each member in the group that is not ananya, duplicate ananya.tex and set the name and id
+# 5. compile to pdf
+
+filename = sys.argv[1] if len(sys.argv) > 1 else input(
+    "Please enter the assignment name for the folder: ")
+
+# ensure ananya.tex exists
+if not os.path.exists(f"{filename}/ananya.tex"):
+    print("ananya.tex does not exist in the folder. Please run the tarp-da-creation.py script first.")
+    exit()
+
+def dupe(author_name):
+    # copy the first 13 lines into the new file
+    head_lines = 13
+    new_file = f"{author_name}"
+    head_cmd = f"head -n {head_lines} ananya.tex > {new_file}.tex"
+    result = os.popen(head_cmd).read()
+    # set the name and id
+    str_to_write = "\\newcommand{\\daAuthorName}{" + group_info[author_name]["name"] + "}\n"
+    str_to_write += "\\newcommand{\\daAuthorRegNum}{" + group_info[author_name]["id"] + "}\n"
+    # write the name and id to the file
+    with open(f"{new_file}.tex", "a") as f:
+        f.write(str_to_write)
+    # copy the rest of the template into the tex file
+    tail_lines = 13 + 3
+    tail_cmd = f"tail -n +{tail_lines} ananya.tex >> {new_file}.tex"
+    result = os.popen(tail_cmd).read()
+    print(f"Created {new_file}.tex")
+    pdf_cmd = f"pdflatex {new_file}.tex"
+    result = os.popen(pdf_cmd).read()
+    result = os.popen(pdf_cmd).read()
+    print(f"Created {new_file}.pdf")
+
+
+# for each member in the group that is not ananya, duplicate ananya.tex and set the name and id
+os.chdir(os.getcwd() + "/" + filename)
+
+for member in group_info:
+    if member == "ananya":
+        continue
+    # duplicate ananya.tex
+    dupe(member)

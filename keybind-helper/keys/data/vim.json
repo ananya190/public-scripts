@@ -1,0 +1,55 @@
+{
+  "name_of_program": "vim",
+  "commands": [
+    {
+      "command": "insert text from a register",
+      "shortcut": "C-r",
+      "description":""
+    },
+    {
+      "command": "insert text from register '.'",
+      "shortcut": "C-a",
+      "description":""
+    },
+    {
+      "command": "completion menu",
+      "shortcut": "C-p",
+      "description":""
+    },
+    {
+      "command": "special \"completion mode\" submode of insert",
+      "shortcut": "C-x",
+      "description":""
+    },
+    {
+      "command": "tag",
+      "shortcut": "[after C-x] C-]",
+      "description":""
+    },
+    {
+      "command": "pull from previous context",
+      "shortcut": "[after C-x] C-p",
+      "description":""
+    },
+    {
+      "command": "pull from next context",
+      "shortcut": "[after C-x] C-n",
+      "description":""
+    },
+    {
+      "command": "file completion",
+      "shortcut": "[after C-x] C-f",
+      "description":""
+    },
+    {
+      "command": "line",
+      "shortcut": "[after C-x] C-l",
+      "description":""
+    },
+    {
+      "command": "omnicompletion",
+      "shortcut": "[after C-x] C-o",
+      "description":""
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name_of_program": "telescope",
+  "commands": [
+    {
+      "command": "Telescope find_files",
+      "shortcut": "<space>tf",
+      "description": "fuzzy find files in working directory"
+    },
+    {
+      "command": "Telescope buffers",
+      "shortcut": "<space>tlb",
+      "description": "fuzzy find buffers"
+    },
+    {
+      "command": "Telescope live_grep",
+      "shortcut": "<space>tg",
+      "description": "grep through files in working directory"
+    },
+    {
+      "command": "Telescope help_tags",
+      "shortcut": "<space>th",
+      "description": "search through :h tags"
+    }
+  ]
+}

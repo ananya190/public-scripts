@@ -12,6 +12,10 @@ personal-setup/tdo-help.md
 # for now
 personal-setup/**/*.bak
 
+vit-stuff/directory-setup/info.json
+vit-stuff/file-setup/info.json
+vit-stuff/file-setup/tarp-group-info.json
+
 # emacs (config is messed up)
 emacs/
 

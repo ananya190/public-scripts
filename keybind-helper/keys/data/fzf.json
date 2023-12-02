@@ -1,0 +1,20 @@
+{
+  "name_of_program": "fzf",
+  "commands": [
+    {
+      "command": "fzf",
+      "shortcut": "C-t",
+      "description": "fuzzy find files with working directory as root"
+    },
+    {
+      "command": "cd with fzf",
+      "shortcut": "M-c (M is left option)",
+      "description": "cd into directory using fzf"
+    },
+    {
+      "command": "history with fzf",
+      "shortcut": "C-r",
+      "description": "select a command from history with fzf"
+    }
+  ]
+}

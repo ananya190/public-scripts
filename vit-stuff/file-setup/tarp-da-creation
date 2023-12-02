@@ -1,0 +1,73 @@
+#!/Users/ananyageorge/opt/anaconda3/bin/python3.9
+
+import os
+import sys
+import json
+
+
+group_info = {}
+
+with open("/Users/ananyageorge/.scripts/vit-stuff/file-setup/tarp-group-info.json", "r") as infojson:
+    group_info = json.load(infojson)
+
+course_info = {
+    "name": "Technical Answers for Real World Problems (TARP)",
+    "code": "CSE1901",
+    "slot": "TAA1",
+    "prof": "Narayanamoorthi M"
+}
+
+# workflow: (this is assignment creation)
+# 1. get assignment name
+# 2. create folder for assignment
+# 3. enter 0 for ananya, 1 to input another member's name
+# 4. if 1, enter name, else set name to ananya
+# 5. create a tex file and copy the header into it
+# 6. set the author name and id in the tex file
+# 7. set the assignment name in the tex file
+# 8. copy the rest of the template into the tex file
+
+filename = sys.argv[1] if len(sys.argv) > 1 else input(
+    "Please enter the assignment name for the folder: ")
+
+# create folder for assignment
+os.system(f"mkdir {filename}")
+
+template_path = "/Users/ananyageorge/vit/fall-23/latex-templates/tarp-da-template.tex "
+
+author = group_info["ananya"]
+
+# check if ananya.tex exists in the folder
+# if it does, then confirm the rewrite
+
+if os.path.exists(f"{filename}/ananya.tex"):
+    confirm = input("ananya.tex already exists. Do you want to overwrite it? (y/n): ")
+    if not confirm == "y":
+        exit()
+
+# copy first 17 lines into the new file 
+
+head_lines = 17
+
+head_cmd = f"head -n {head_lines} {template_path} > {filename}/ananya.tex"
+
+result = os.popen(head_cmd).read()
+
+# set the assignment name in the tex file
+
+tex_newcmd = "\\newcommand"
+
+assignment_name = " ".join([i.capitalize() for i in input("Please enter the name of the assignment: ").split(" ")])
+
+str_to_write = "\\newcommand{\\daAssignmentName}{" + assignment_name + "}\n\n"
+
+with open(f"{filename}/ananya.tex", "a") as texfile:
+    texfile.write(str_to_write)
+
+# copy the rest of the template into the tex file
+
+tail_cmd = f"tail -n +{head_lines + 3} {template_path} >> {filename}/ananya.tex"
+
+result = os.popen(tail_cmd).read()
+
+print("template written to ananya.tex")

@@ -1,0 +1,35 @@
+{
+  "name_of_program": "tmux",
+  "commands": [
+    {
+      "command": "attach_tmux",
+      "shortcut": "Meta-t",
+      "description": "attach or switch to tmux session"
+    },
+    {
+      "command": "enter ready room",
+      "shortcut": "rr",
+      "description": "enter ready room"
+    },
+    {
+      "command": "reload config",
+      "shortcut": "prefix r",
+      "description": "reload tmux.conf"
+    },
+    {
+      "command": "rename window",
+      "shortcut": "prefix ,",
+      "description": "rename current window"
+    },
+    {
+      "command": "rename session",
+      "shortcut": "prefix $",
+      "description": "rename current session"
+    },
+    {
+      "command": "kill session",
+      "shortcut": "prefix X",
+      "description": "kill current session"
+    }
+  ]
+}
